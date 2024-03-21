@@ -1,0 +1,66 @@
+#include <iostream> 
+#include <string> 
+using namespace std; 
+class Date { 
+private: 
+ int month; 
+ int day; 
+ int year; 
+public: 
+ Date(int m, int d, int y) : month(m), day(d), year(y) {} 
+ void printDate1() { 
+ cout << month << "/" << day << "/" << year << endl; 
+ } 
+ void printDate2() { 
+ string monthName; 
+ switch (month) { 
+ case 1: monthName = "January"; break; 
+ case 2: monthName = "February"; break; 
+ case 3: monthName = "March"; break; 
+ case 4: monthName = "April"; break; 
+ case 5: monthName = "May"; break; 
+ case 6: monthName = "June"; break; 
+ case 7: monthName = "July"; break; 
+ case 8: monthName = "August"; break; 
+ case 9: monthName = "September"; break; 
+ case 10: monthName = "October"; break; 
+ case 11: monthName = "November"; break; 
+ case 12: monthName = "December"; break; 
+ } 
+ cout << monthName << " " << day << ", " << year << endl; 
+ } 
+ void printDate3() { 
+ string monthName; 
+ switch (month) { 
+ case 1: monthName = "January"; break; 
+ case 2: monthName = "February"; break; 
+ case 3: monthName = "March"; break; 
+ case 4: monthName = "April"; break; 
+ case 5: monthName = "May"; break; 
+ case 6: monthName = "June"; break; 
+ case 7: monthName = "July"; break; 
+ case 8: monthName = "August"; break; 
+ case 9: monthName = "September"; break; 
+ case 10: monthName = "October"; break; 
+ case 11: monthName = "November"; break; 
+ case 12: monthName = "December"; break; 
+ } 
+ cout << day << " " << monthName << " " << year << endl; 
+ } 
+ void validate() { 
+ if (day < 1 || day > 31 || month < 1 || month > 12) { 
+ cerr << "Invalid date. Please enter a valid date.\n"; 
+ exit(1); 
+ } 
+ } 
+}; 
+int main() { 
+ int m, d, y; 
+ cout << "Enter month, day, and year: "; 
+ cin >> m >> d >> y; 
+ Date date(m, d, y); 
+ date.validate( 
+
+date.printDate1(); 
+ date.printDate2(); 
+ date.printDate3();} 
